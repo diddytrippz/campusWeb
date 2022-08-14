@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginPageCampusWidget extends StatefulWidget {
-  const LoginPageCampusWidget({Key? key}) : super(key: key);
+class RennieHouseWidget extends StatefulWidget {
+  const RennieHouseWidget({Key? key}) : super(key: key);
 
   @override
-  _LoginPageCampusWidgetState createState() => _LoginPageCampusWidgetState();
+  _RennieHouseWidgetState createState() => _RennieHouseWidgetState();
 }
 
-class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
+class _RennieHouseWidgetState extends State<RennieHouseWidget> {
   TextEditingController? textFieldEmailController;
   TextEditingController? textFieldPassController;
   late bool textFieldPassVisibility;
@@ -24,8 +24,7 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
   @override
   void initState() {
     super.initState();
-    logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'loginPageCampus'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'rennieHouse'});
     textFieldEmailController = TextEditingController();
     textFieldPassController = TextEditingController();
     textFieldPassVisibility = false;
@@ -64,10 +63,10 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                           image: DecorationImage(
                             fit: BoxFit.scaleDown,
                             image: Image.asset(
-                              'assets/images/campus_logo_1.png',
+                              'assets/images/Layer_2.png',
                             ).image,
                           ),
-                          shape: BoxShape.circle,
+                          shape: BoxShape.rectangle,
                         ),
                       ),
                     ),
@@ -117,12 +116,12 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                                   tabs: [
                                     Tab(
                                       text: FFLocalizations.of(context).getText(
-                                        'wv6la93j' /* Sign In */,
+                                        '7d9npnge' /* Sign In */,
                                       ),
                                     ),
                                     Tab(
                                       text: FFLocalizations.of(context).getText(
-                                        'qx44qith' /* Sign Up */,
+                                        'er7sgpgy' /* Sign Up */,
                                       ),
                                     ),
                                   ],
@@ -169,7 +168,7 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      't9ffbz5k' /* Enter Student Your Email */,
+                                                      'uzqhsqdx' /* Enter Student Your Email */,
                                                     ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
@@ -245,7 +244,7 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'n0uctbe1' /* Enter Your Password */,
+                                                        'uvln4uf1' /* Enter Your Password */,
                                                       ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
@@ -320,9 +319,8 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Open Sans',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
+                                                          color:
+                                                              Color(0xFFFCF9F9),
                                                         ),
                                                     keyboardType: TextInputType
                                                         .emailAddress,
@@ -334,7 +332,7 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
                                                       logFirebaseEvent(
-                                                          'LOGIN_CAMPUS_SIGN_IN_BTN_ON_TAP');
+                                                          'RENNIE_HOUSE_PAGE_SIGN_IN_BTN_ON_TAP');
                                                       logFirebaseEvent(
                                                           'Button_Auth');
                                                       GoRouter.of(context)
@@ -353,12 +351,12 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                                                       }
 
                                                       context.goNamedAuth(
-                                                          'homePage', mounted);
+                                                          'home', mounted);
                                                     },
                                                     text: FFLocalizations.of(
                                                             context)
                                                         .getText(
-                                                      'jwfek3mr' /* Sign In */,
+                                                      'qpchz9eu' /* Sign In */,
                                                     ),
                                                     options: FFButtonOptions(
                                                       width: double.infinity,
@@ -395,7 +393,7 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                                                   child: InkWell(
                                                     onTap: () async {
                                                       logFirebaseEvent(
-                                                          'LOGIN_CAMPUS_Text_011ghbrt_ON_TAP');
+                                                          'RENNIE_HOUSE_PAGE_Text_edw6lj0r_ON_TAP');
                                                       logFirebaseEvent(
                                                           'Text_Auth');
                                                       if (textFieldEmailController!
@@ -422,7 +420,7 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'adnmfwgw' /* Forgot Password? */,
+                                                        'q4lawgu8' /* Forgot Password? */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -433,7 +431,7 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                                                                     'Open Sans',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryBtnText,
+                                                                    .primaryText,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
@@ -467,15 +465,8 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                                                 hintText:
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'iljy0jtl' /* Enter Student Your Email */,
+                                                  'jyfybbum' /* Enter Student Your Email */,
                                                 ),
-                                                hintStyle: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyText1
-                                                    .override(
-                                                      fontFamily: 'Open Sans',
-                                                      color: Color(0xFFFCF9F9),
-                                                    ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
                                                   borderSide: BorderSide(
@@ -504,9 +495,7 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                                                             25, 25, 25, 25),
                                                 prefixIcon: Icon(
                                                   Icons.alternate_email,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBtnText,
+                                                  color: Color(0xFFFCF9F9),
                                                   size: 20,
                                                 ),
                                               ),
@@ -531,7 +520,7 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 logFirebaseEvent(
-                                                    'LOGIN_CAMPUS_CREATE_ACCOUNT_BTN_ON_TAP');
+                                                    'RENNIE_HOUSE_CREATE_ACCOUNT_BTN_ON_TAP');
                                                 logFirebaseEvent('Button_Auth');
                                                 if (textFieldEmailResetController!
                                                     .text.isEmpty) {
@@ -554,7 +543,7 @@ class _LoginPageCampusWidgetState extends State<LoginPageCampusWidget> {
                                               },
                                               text: FFLocalizations.of(context)
                                                   .getText(
-                                                '2mhmng0f' /* Create account */,
+                                                'oacgyvwn' /* Create account */,
                                               ),
                                               options: FFButtonOptions(
                                                 width: double.infinity,

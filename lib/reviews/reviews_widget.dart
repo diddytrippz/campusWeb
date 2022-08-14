@@ -532,7 +532,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                           ),
                                         );
                                         logFirebaseEvent('Button_Navigate-To');
-                                        context.pushNamed('viewPage');
+                                        context.pushNamed('view');
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         'smcvgq4y' /* Confirm */,

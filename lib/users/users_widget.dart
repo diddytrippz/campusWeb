@@ -11,14 +11,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:text_search/text_search.dart';
 
-class UsersSearchWidget extends StatefulWidget {
-  const UsersSearchWidget({Key? key}) : super(key: key);
+class UsersWidget extends StatefulWidget {
+  const UsersWidget({Key? key}) : super(key: key);
 
   @override
-  _UsersSearchWidgetState createState() => _UsersSearchWidgetState();
+  _UsersWidgetState createState() => _UsersWidgetState();
 }
 
-class _UsersSearchWidgetState extends State<UsersSearchWidget> {
+class _UsersWidgetState extends State<UsersWidget> {
   List<UsersRecord> simpleSearchResults = [];
   TextEditingController? textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -26,7 +26,7 @@ class _UsersSearchWidgetState extends State<UsersSearchWidget> {
   @override
   void initState() {
     super.initState();
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'usersSearch'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'users'});
     textController = TextEditingController();
   }
 
@@ -47,7 +47,7 @@ class _UsersSearchWidgetState extends State<UsersSearchWidget> {
             size: 25,
           ),
           onPressed: () async {
-            logFirebaseEvent('USERS_SEARCH_arrow_back_ios_ICN_ON_TAP');
+            logFirebaseEvent('USERS_PAGE_arrow_back_ios_ICN_ON_TAP');
             logFirebaseEvent('IconButton_Navigate-Back');
             context.pop();
           },
@@ -158,7 +158,7 @@ class _UsersSearchWidgetState extends State<UsersSearchWidget> {
                                   ),
                                   onFieldSubmitted: (_) async {
                                     logFirebaseEvent(
-                                        'USERS_SEARCH_TextField_yw70xwop_ON_TEXTF');
+                                        'USERS_TextField_yw70xwop_ON_TEXTFIELD_SU');
                                     logFirebaseEvent('TextField_Simple-Search');
                                     await queryUsersRecordOnce()
                                         .then(
@@ -291,7 +291,7 @@ class _UsersSearchWidgetState extends State<UsersSearchWidget> {
                                         return InkWell(
                                           onTap: () async {
                                             logFirebaseEvent(
-                                                'USERS_SEARCH_PAGE_userEntry_ON_TAP');
+                                                'USERS_PAGE_userEntry_ON_TAP');
                                             if (listSearrchItem.room ==
                                                 'Management') {
                                               logFirebaseEvent(
@@ -320,7 +320,7 @@ class _UsersSearchWidgetState extends State<UsersSearchWidget> {
                                               logFirebaseEvent(
                                                   'userEntry_Navigate-To');
                                               context.pushNamed(
-                                                'ChatPage',
+                                                'chat',
                                                 queryParams: {
                                                   'chatUser': serializeParam(
                                                       listSearrchItem,

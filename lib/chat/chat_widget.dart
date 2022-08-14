@@ -10,8 +10,8 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ChatPageWidget extends StatefulWidget {
-  const ChatPageWidget({
+class ChatWidget extends StatefulWidget {
+  const ChatWidget({
     Key? key,
     this.chatUser,
     this.chatRef,
@@ -21,10 +21,10 @@ class ChatPageWidget extends StatefulWidget {
   final DocumentReference? chatRef;
 
   @override
-  _ChatPageWidgetState createState() => _ChatPageWidgetState();
+  _ChatWidgetState createState() => _ChatWidgetState();
 }
 
-class _ChatPageWidgetState extends State<ChatPageWidget> {
+class _ChatWidgetState extends State<ChatWidget> {
   FFChatInfo? _chatInfo;
   bool isGroupChat() {
     if (widget.chatUser == null) {
@@ -52,7 +52,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
       }
     });
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'ChatPage'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'chat'});
   }
 
   @override
@@ -66,7 +66,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
           padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
           child: InkWell(
             onTap: () async {
-              logFirebaseEvent('CHAT_PAGE_PAGE_Row_mq8qn8mu_ON_TAP');
+              logFirebaseEvent('CHAT_PAGE_Row_mq8qn8mu_ON_TAP');
               logFirebaseEvent('Row_Navigate-Back');
               context.pop();
             },
@@ -162,7 +162,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
               child: InkWell(
                 onTap: () async {
-                  logFirebaseEvent('CHAT_PAGE_PAGE_Icon_k0drz2b9_ON_TAP');
+                  logFirebaseEvent('CHAT_PAGE_Icon_k0drz2b9_ON_TAP');
                   logFirebaseEvent('Icon_Show-Snack-Bar');
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
@@ -189,7 +189,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 16, 0),
             child: InkWell(
               onTap: () async {
-                logFirebaseEvent('CHAT_PAGE_PAGE_Icon_wxcp699m_ON_TAP');
+                logFirebaseEvent('CHAT_PAGE_Icon_wxcp699m_ON_TAP');
                 logFirebaseEvent('Icon_Show-Snack-Bar');
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(

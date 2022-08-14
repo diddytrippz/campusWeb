@@ -84,7 +84,6 @@ dependencies:
   sign_in_with_apple: 4.1.0
   sign_in_with_apple_platform_interface: 1.0.0
   sign_in_with_apple_web: 1.0.1
-  smooth_page_indicator: 1.0.0+2
   table_calendar: 3.0.6
   text_search: 0.0.2
   timeago: 3.2.2

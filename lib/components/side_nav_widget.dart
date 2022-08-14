@@ -103,7 +103,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                       onTap: () async {
                         logFirebaseEvent('SIDE_NAV_COMP_Row_rgq06ob3_ON_TAP');
                         logFirebaseEvent('Row_Navigate-To');
-                        context.pushNamed('homePage');
+                        context.pushNamed('home');
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -142,7 +142,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                       onTap: () async {
                         logFirebaseEvent('SIDE_NAV_COMP_Row_nk176y9v_ON_TAP');
                         logFirebaseEvent('Row_Navigate-To');
-                        context.pushNamed('viewPage');
+                        context.pushNamed('view');
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -181,7 +181,16 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                       onTap: () async {
                         logFirebaseEvent('SIDE_NAV_COMP_Row_84dxzcmt_ON_TAP');
                         logFirebaseEvent('Row_Navigate-To');
-                        context.pushNamed('messagesPage');
+                        context.pushNamed(
+                          'messages',
+                          extra: <String, dynamic>{
+                            kTransitionInfoKey: TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.fade,
+                              duration: Duration(milliseconds: 0),
+                            ),
+                          },
+                        );
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -220,7 +229,16 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                       onTap: () async {
                         logFirebaseEvent('SIDE_NAV_COMP_Row_t1032x3x_ON_TAP');
                         logFirebaseEvent('Row_Navigate-To');
-                        context.pushNamed('usersSearch');
+                        context.pushNamed(
+                          'users',
+                          extra: <String, dynamic>{
+                            kTransitionInfoKey: TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.fade,
+                              duration: Duration(milliseconds: 0),
+                            ),
+                          },
+                        );
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -310,7 +328,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                       onTap: () async {
                         logFirebaseEvent('SIDE_NAV_COMP_Row_0ylqr4xj_ON_TAP');
                         logFirebaseEvent('Row_Navigate-To');
-                        context.pushNamed('settingsPage');
+                        context.pushNamed('settings');
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.max,

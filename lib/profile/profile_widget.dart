@@ -12,14 +12,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ProfilePageWidget extends StatefulWidget {
-  const ProfilePageWidget({Key? key}) : super(key: key);
+class ProfileWidget extends StatefulWidget {
+  const ProfileWidget({Key? key}) : super(key: key);
 
   @override
-  _ProfilePageWidgetState createState() => _ProfilePageWidgetState();
+  _ProfileWidgetState createState() => _ProfileWidgetState();
 }
 
-class _ProfilePageWidgetState extends State<ProfilePageWidget> {
+class _ProfileWidgetState extends State<ProfileWidget> {
   TextEditingController? textController1;
   TextEditingController? textController2;
   TextEditingController? textController3;
@@ -30,7 +30,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
   @override
   void initState() {
     super.initState();
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'profilePage'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'profile'});
     textController1 = TextEditingController(text: currentUserDisplayName);
     textController2 = TextEditingController(text: currentUserEmail);
     textController3 = TextEditingController(
@@ -93,7 +93,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                   ),
                                   onPressed: () async {
                                     logFirebaseEvent(
-                                        'PROFILE_arrow_back_ios_ICN_ON_TAP');
+                                        'PROFILE_PAGE_arrow_back_ios_ICN_ON_TAP');
                                     logFirebaseEvent(
                                         'IconButton_Navigate-Back');
                                     context.pop();
@@ -119,7 +119,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                   child: InkWell(
                                     onTap: () async {
                                       logFirebaseEvent(
-                                          'PROFILE_PAGE_PAGE_Text_74dxe0on_ON_TAP');
+                                          'PROFILE_PAGE_Text_74dxe0on_ON_TAP');
                                       logFirebaseEvent('Text_Backend-Call');
 
                                       final usersUpdateData =
@@ -148,7 +148,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                         ),
                                       );
                                       logFirebaseEvent('Text_Navigate-To');
-                                      context.pushNamed('profilePage');
+                                      context.pushNamed('profile');
                                     },
                                     child: Text(
                                       FFLocalizations.of(context).getText(

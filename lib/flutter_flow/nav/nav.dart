@@ -72,13 +72,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, _) =>
-          appStateNotifier.loggedIn ? HomePageWidget() : OnboardingWidget(),
+          appStateNotifier.loggedIn ? HomeWidget() : OnboardingWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomePageWidget() : OnboardingWidget(),
+              appStateNotifier.loggedIn ? HomeWidget() : OnboardingWidget(),
           routes: [
             FFRoute(
               name: 'onboarding',
@@ -86,21 +86,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => OnboardingWidget(),
             ),
             FFRoute(
-              name: 'viewPage',
-              path: 'viewPage',
+              name: 'view',
+              path: 'view',
               requireAuth: true,
-              builder: (context, params) => ViewPageWidget(
+              builder: (context, params) => ViewWidget(
                 completeTemp: params.getParam('completeTemp', ParamType.double),
               ),
             ),
             FFRoute(
-              name: 'ChatPage',
-              path: 'chatPage',
+              name: 'chat',
+              path: 'chat',
               requireAuth: true,
               asyncParams: {
                 'chatUser': getDoc('users', UsersRecord.serializer),
               },
-              builder: (context, params) => ChatPageWidget(
+              builder: (context, params) => ChatWidget(
                 chatUser: params.getParam('chatUser', ParamType.Document),
                 chatRef: params.getParam(
                     'chatRef', ParamType.DocumentReference, 'chats'),
@@ -173,28 +173,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'profilePage',
-              path: 'profilePage',
+              name: 'profile',
+              path: 'profile',
               requireAuth: true,
-              builder: (context, params) => ProfilePageWidget(),
+              builder: (context, params) => ProfileWidget(),
             ),
             FFRoute(
-              name: 'settingsPage',
-              path: 'settingsPage',
+              name: 'settings',
+              path: 'settings',
               requireAuth: true,
-              builder: (context, params) => SettingsPageWidget(),
+              builder: (context, params) => SettingsWidget(),
             ),
             FFRoute(
-              name: 'homePage',
-              path: 'homePage',
+              name: 'home',
+              path: 'home',
               requireAuth: true,
-              builder: (context, params) => HomePageWidget(),
+              builder: (context, params) => HomeWidget(),
             ),
             FFRoute(
-              name: 'messagesPage',
-              path: 'messagesPage',
+              name: 'messages',
+              path: 'messages',
               requireAuth: true,
-              builder: (context, params) => MessagesPageWidget(),
+              builder: (context, params) => MessagesWidget(),
             ),
             FFRoute(
               name: 'moreInformation',
@@ -214,20 +214,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => NotificationsWidget(),
             ),
             FFRoute(
-              name: 'usersSearch',
-              path: 'usersSearch',
+              name: 'users',
+              path: 'users',
               requireAuth: true,
-              builder: (context, params) => UsersSearchWidget(),
+              builder: (context, params) => UsersWidget(),
             ),
             FFRoute(
-              name: 'loginPageRennies',
-              path: 'loginPageRennies',
-              builder: (context, params) => LoginPageRenniesWidget(),
+              name: 'rennieHouse',
+              path: 'rennieHouse',
+              builder: (context, params) => RennieHouseWidget(),
             ),
             FFRoute(
-              name: 'loginPageCampus',
-              path: 'loginPageCampus',
-              builder: (context, params) => LoginPageCampusWidget(),
+              name: 'campusAfrica',
+              path: 'campusAfrica',
+              builder: (context, params) => CampusAfricaWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

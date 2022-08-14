@@ -91,7 +91,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget>
                                   'BOTTOM_NAV_BAR_Column_p4nmh717_ON_TAP');
                               logFirebaseEvent('Column_Navigate-To');
                               context.pushNamed(
-                                'messagesPage',
+                                'messages',
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
@@ -160,7 +160,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget>
                                     'BOTTOM_NAV_BAR_Column_8qpxzasq_ON_TAP');
                                 logFirebaseEvent('Column_Navigate-To');
                                 context.pushNamed(
-                                  'homePage',
+                                  'home',
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
@@ -227,7 +227,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget>
                                   'BOTTOM_NAV_BAR_Column_2d7e194y_ON_TAP');
                               logFirebaseEvent('Column_Navigate-To');
                               context.pushNamed(
-                                'settingsPage',
+                                'settings',
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
@@ -343,7 +343,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget>
                                       HapticFeedback.selectionClick();
                                       logFirebaseEvent('Column_Navigate-To');
                                       context.pushNamed(
-                                        'viewPage',
+                                        'view',
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -376,7 +376,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget>
                                       HapticFeedback.selectionClick();
                                       logFirebaseEvent('Column_Navigate-To');
                                       context.pushNamed(
-                                        'messagesPage',
+                                        'messages',
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -517,7 +517,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget>
                                       HapticFeedback.selectionClick();
                                       logFirebaseEvent('Column_Navigate-To');
                                       context.pushNamed(
-                                        'settingsPage',
+                                        'settings',
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,

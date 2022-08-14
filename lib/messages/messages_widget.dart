@@ -13,14 +13,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
-class MessagesPageWidget extends StatefulWidget {
-  const MessagesPageWidget({Key? key}) : super(key: key);
+class MessagesWidget extends StatefulWidget {
+  const MessagesWidget({Key? key}) : super(key: key);
 
   @override
-  _MessagesPageWidgetState createState() => _MessagesPageWidgetState();
+  _MessagesWidgetState createState() => _MessagesWidgetState();
 }
 
-class _MessagesPageWidgetState extends State<MessagesPageWidget> {
+class _MessagesWidgetState extends State<MessagesWidget> {
   PagingController<DocumentSnapshot?, ChatsRecord>? _pagingController;
   Query? _pagingQuery;
   List<StreamSubscription?> _streamSubscriptions = [];
@@ -30,8 +30,7 @@ class _MessagesPageWidgetState extends State<MessagesPageWidget> {
   @override
   void initState() {
     super.initState();
-    logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'messagesPage'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'messages'});
   }
 
   @override
@@ -105,9 +104,9 @@ class _MessagesPageWidgetState extends State<MessagesPageWidget> {
                             child: InkWell(
                               onTap: () async {
                                 logFirebaseEvent(
-                                    'MESSAGES_PAGE_PAGE_Icon_eywvoudg_ON_TAP');
+                                    'MESSAGES_PAGE_Icon_eywvoudg_ON_TAP');
                                 logFirebaseEvent('Icon_Navigate-To');
-                                context.pushNamed('usersSearch');
+                                context.pushNamed('users');
                               },
                               child: Icon(
                                 FFIcons.kic25,
@@ -179,7 +178,7 @@ class _MessagesPageWidgetState extends State<MessagesPageWidget> {
                                           child: InkWell(
                                             onTap: () async {
                                               logFirebaseEvent(
-                                                  'MESSAGES_Container_1svq7eou_ON_TAP');
+                                                  'MESSAGES_PAGE_Container_1svq7eou_ON_TAP');
                                               if (rowUsersRecord.room ==
                                                   'Management') {
                                                 logFirebaseEvent(
@@ -208,7 +207,7 @@ class _MessagesPageWidgetState extends State<MessagesPageWidget> {
                                                 logFirebaseEvent(
                                                     'Container_Navigate-To');
                                                 context.pushNamed(
-                                                  'ChatPage',
+                                                  'chat',
                                                   queryParams: {
                                                     'chatUser': serializeParam(
                                                         rowUsersRecord,
@@ -404,7 +403,7 @@ class _MessagesPageWidgetState extends State<MessagesPageWidget> {
                                         FFChatInfo(listViewChatsRecord);
                                     return FFChatPreview(
                                       onTap: () => context.pushNamed(
-                                        'ChatPage',
+                                        'chat',
                                         queryParams: {
                                           'chatUser': serializeParam(
                                               chatInfo.otherUsers.length == 1

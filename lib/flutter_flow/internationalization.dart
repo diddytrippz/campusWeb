@@ -45,16 +45,6 @@ class FFLocalizationsDelegate extends LocalizationsDelegate<FFLocalizations> {
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // onboarding
   {
-    '7rm5hpzh': {
-      'en': 'Rennie House',
-      'af': 'Kampus Afrika',
-      'zu': 'Ikhampasi Afrika',
-    },
-    'til09yqe': {
-      'en': 'Campus Africa',
-      'af': 'Kampus Afrika',
-      'zu': 'Ikhampasi Afrika',
-    },
     '5fjqqbhk': {
       'en': 'Campus Africa',
       'af': 'Teken aan',
@@ -71,7 +61,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zu': 'Ikhaya',
     },
   },
-  // viewPage
+  // view
   {
     'qglikkox': {
       'en': 'Submitted',
@@ -154,7 +144,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zu': 'Imiphumela yosesho',
     },
   },
-  // ChatPage
+  // chat
   {
     'ecpp8geu': {
       'en': '0',
@@ -1010,7 +1000,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zu': 'Ikhaya',
     },
   },
-  // profilePage
+  // profile
   {
     'g43mgqae': {
       'en': 'Edit Profile',
@@ -1058,7 +1048,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zu': 'Ikhaya',
     },
   },
-  // settingsPage
+  // settings
   {
     '455h835o': {
       'en': 'Settings',
@@ -1111,7 +1101,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zu': '',
     },
   },
-  // homePage
+  // home
   {
     '2koevdog': {
       'en': 'Hello World',
@@ -1174,7 +1164,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zu': 'Abanye',
     },
   },
-  // messagesPage
+  // messages
   {
     't95vbdij': {
       'en': 'Inbox',
@@ -1301,7 +1291,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zu': 'Konke',
     },
   },
-  // usersSearch
+  // users
   {
     '1ehqp1x6': {
       'en': 'Contacts',
@@ -1324,7 +1314,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zu': 'Sesha Oxhumana Nabo',
     },
   },
-  // loginPageRennies
+  // rennieHouse
   {
     '7d9npnge': {
       'en': 'Sign In',
@@ -1387,7 +1377,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'zu': 'Ikhaya',
     },
   },
-  // loginPageCampus
+  // campusAfrica
   {
     'wv6la93j': {
       'en': 'Sign In',

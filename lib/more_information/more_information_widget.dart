@@ -162,7 +162,7 @@ class _MoreInformationWidgetState extends State<MoreInformationWidget> {
                             'MORE_INFORMATION_Badge_6zmr0ir8_ON_TAP');
                         logFirebaseEvent('Badge_Navigate-To');
                         context.pushNamed(
-                          'ChatPage',
+                          'chat',
                           queryParams: {
                             'chatUser': serializeParam(
                                 rowUsersRecord, ParamType.Document),

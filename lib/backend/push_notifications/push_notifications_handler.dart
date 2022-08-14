@@ -84,10 +84,10 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
 
 final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'onboarding': (data) async => OnboardingWidget(),
-  'viewPage': (data) async => ViewPageWidget(
+  'view': (data) async => ViewWidget(
         completeTemp: getParameter(data, 'completeTemp'),
       ),
-  'ChatPage': (data) async => ChatPageWidget(
+  'chat': (data) async => ChatWidget(
         chatUser: await getDocumentParameter(
             data, 'chatUser', UsersRecord.serializer),
         chatRef: getParameter(data, 'chatRef'),
@@ -105,17 +105,17 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
         jobReviews: await getDocumentParameter(
             data, 'jobReviews', MaintenanceRecord.serializer),
       ),
-  'profilePage': (data) async => ProfilePageWidget(),
-  'settingsPage': (data) async => SettingsPageWidget(),
-  'messagesPage': (data) async => MessagesPageWidget(),
+  'profile': (data) async => ProfileWidget(),
+  'settings': (data) async => SettingsWidget(),
+  'messages': (data) async => MessagesWidget(),
   'moreInformation': (data) async => MoreInformationWidget(
         jobs: await getDocumentParameter(
             data, 'jobs', MaintenanceRecord.serializer),
       ),
   'notifications': (data) async => NotificationsWidget(),
-  'usersSearch': (data) async => UsersSearchWidget(),
-  'loginPageRennies': (data) async => LoginPageRenniesWidget(),
-  'loginPageCampus': (data) async => LoginPageCampusWidget(),
+  'users': (data) async => UsersWidget(),
+  'rennieHouse': (data) async => RennieHouseWidget(),
+  'campusAfrica': (data) async => CampusAfricaWidget(),
 };
 
 bool hasMatchingParameters(Map<String, dynamic> data, Set<String> params) =>

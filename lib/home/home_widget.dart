@@ -11,14 +11,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({Key? key}) : super(key: key);
+class HomeWidget extends StatefulWidget {
+  const HomeWidget({Key? key}) : super(key: key);
 
   @override
-  _HomePageWidgetState createState() => _HomePageWidgetState();
+  _HomeWidgetState createState() => _HomeWidgetState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
+class _HomeWidgetState extends State<HomeWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -26,12 +26,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     super.initState();
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      logFirebaseEvent('HOME_PAGE_PAGE_homePage_ON_PAGE_LOAD');
-      logFirebaseEvent('homePage_Update-Local-State');
+      logFirebaseEvent('HOME_PAGE_home_ON_PAGE_LOAD');
+      logFirebaseEvent('home_Update-Local-State');
       setState(() => FFAppState().btmNavVis = false);
     });
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'homePage'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'home'});
   }
 
   @override
@@ -147,10 +147,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             ),
                                             onPressed: () async {
                                               logFirebaseEvent(
-                                                  'HOME_PAGE_PAGE_ic19_ICN_ON_TAP');
+                                                  'HOME_PAGE_ic19_ICN_ON_TAP');
                                               logFirebaseEvent(
                                                   'IconButton_Navigate-To');
-                                              context.pushNamed('messagesPage');
+                                              context.pushNamed('messages');
                                             },
                                           ),
                                         ),
@@ -220,7 +220,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               ),
                                               onPressed: () async {
                                                 logFirebaseEvent(
-                                                    'HOME_PAGE_PAGE_ic15_ICN_ON_TAP');
+                                                    'HOME_PAGE_ic15_ICN_ON_TAP');
                                                 logFirebaseEvent(
                                                     'IconButton_Navigate-To');
                                                 context
@@ -361,7 +361,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       child: InkWell(
                                                         onTap: () async {
                                                           logFirebaseEvent(
-                                                              'HOME_PAGE_PAGE_Badge_m9cdh5tk_ON_TAP');
+                                                              'HOME_PAGE_Badge_m9cdh5tk_ON_TAP');
                                                           logFirebaseEvent(
                                                               'Badge_Navigate-To');
                                                           context.pushNamed(
@@ -486,7 +486,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               child: InkWell(
                                                 onTap: () async {
                                                   logFirebaseEvent(
-                                                      'HOME_PAGE_PAGE_activityButton_ON_TAP');
+                                                      'HOME_PAGE_activityButton_ON_TAP');
                                                   logFirebaseEvent(
                                                       'activityButton_Navigate-To');
                                                   context
@@ -605,7 +605,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               child: InkWell(
                                                 onTap: () async {
                                                   logFirebaseEvent(
-                                                      'HOME_PAGE_PAGE_activityButton_ON_TAP');
+                                                      'HOME_PAGE_activityButton_ON_TAP');
                                                   logFirebaseEvent(
                                                       'activityButton_Navigate-To');
                                                   context.pushNamed('Plumbing');
@@ -733,7 +733,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   child: InkWell(
                                                     onTap: () async {
                                                       logFirebaseEvent(
-                                                          'HOME_PAGE_PAGE_activityButton_ON_TAP');
+                                                          'HOME_PAGE_activityButton_ON_TAP');
                                                       logFirebaseEvent(
                                                           'activityButton_Navigate-To');
                                                       context.pushNamed(
@@ -852,7 +852,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   child: InkWell(
                                                     onTap: () async {
                                                       logFirebaseEvent(
-                                                          'HOME_PAGE_PAGE_activityButton_ON_TAP');
+                                                          'HOME_PAGE_activityButton_ON_TAP');
                                                       logFirebaseEvent(
                                                           'activityButton_Navigate-To');
                                                       context.pushNamed(
@@ -981,7 +981,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     child: InkWell(
                                                       onTap: () async {
                                                         logFirebaseEvent(
-                                                            'HOME_PAGE_PAGE_activityButton_ON_TAP');
+                                                            'HOME_PAGE_activityButton_ON_TAP');
                                                         logFirebaseEvent(
                                                             'activityButton_Navigate-To');
                                                         context.pushNamed(
@@ -1106,7 +1106,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     child: InkWell(
                                                       onTap: () async {
                                                         logFirebaseEvent(
-                                                            'HOME_PAGE_PAGE_activityButton_ON_TAP');
+                                                            'HOME_PAGE_activityButton_ON_TAP');
                                                         logFirebaseEvent(
                                                             'activityButton_Navigate-To');
                                                         context.pushNamed(
@@ -1241,7 +1241,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     child: InkWell(
                                                       onTap: () async {
                                                         logFirebaseEvent(
-                                                            'HOME_PAGE_PAGE_activityButton_ON_TAP');
+                                                            'HOME_PAGE_activityButton_ON_TAP');
                                                         logFirebaseEvent(
                                                             'activityButton_Navigate-To');
                                                         context.pushNamed(
@@ -1366,7 +1366,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     child: InkWell(
                                                       onTap: () async {
                                                         logFirebaseEvent(
-                                                            'HOME_PAGE_PAGE_activityButton_ON_TAP');
+                                                            'HOME_PAGE_activityButton_ON_TAP');
                                                         logFirebaseEvent(
                                                             'activityButton_Navigate-To');
                                                         context.pushNamed(

@@ -15,8 +15,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ViewPageWidget extends StatefulWidget {
-  const ViewPageWidget({
+class ViewWidget extends StatefulWidget {
+  const ViewWidget({
     Key? key,
     this.completeTemp,
   }) : super(key: key);
@@ -24,10 +24,10 @@ class ViewPageWidget extends StatefulWidget {
   final double? completeTemp;
 
   @override
-  _ViewPageWidgetState createState() => _ViewPageWidgetState();
+  _ViewWidgetState createState() => _ViewWidgetState();
 }
 
-class _ViewPageWidgetState extends State<ViewPageWidget> {
+class _ViewWidgetState extends State<ViewWidget> {
   Completer<List<MaintenanceRecord>>? _firestoreRequestCompleter1;
   Completer<List<MaintenanceRecord>>? _firestoreRequestCompleter4;
   Completer<List<MaintenanceRecord>>? _firestoreRequestCompleter2;
@@ -42,7 +42,7 @@ class _ViewPageWidgetState extends State<ViewPageWidget> {
       start: DateTime.now().startOfDay,
       end: DateTime.now().endOfDay,
     );
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'viewPage'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'view'});
   }
 
   @override
@@ -311,7 +311,7 @@ class _ViewPageWidgetState extends State<ViewPageWidget> {
                                                                                 listViewSubSTDMaintenanceRecordList[listViewSubSTDIndex];
                                                                             return InkWell(
                                                                               onTap: () async {
-                                                                                logFirebaseEvent('VIEW_PAGE_PAGE_ListTile_e9ojaabb_ON_TAP');
+                                                                                logFirebaseEvent('VIEW_PAGE_ListTile_e9ojaabb_ON_TAP');
                                                                                 logFirebaseEvent('ListTile_Navigate-To');
                                                                                 context.pushNamed(
                                                                                   'moreInformation',
@@ -518,7 +518,7 @@ class _ViewPageWidgetState extends State<ViewPageWidget> {
                                                                               final listViewPendSTDMaintenanceRecord = listViewPendSTDMaintenanceRecordList[listViewPendSTDIndex];
                                                                               return InkWell(
                                                                                 onTap: () async {
-                                                                                  logFirebaseEvent('VIEW_PAGE_PAGE_ListTile_29pjzu71_ON_TAP');
+                                                                                  logFirebaseEvent('VIEW_PAGE_ListTile_29pjzu71_ON_TAP');
                                                                                   logFirebaseEvent('ListTile_Navigate-To');
                                                                                   context.pushNamed(
                                                                                     'moreInformation',
@@ -674,7 +674,7 @@ class _ViewPageWidgetState extends State<ViewPageWidget> {
                                                                                 listViewCompSTDMaintenanceRecordList[listViewCompSTDIndex];
                                                                             return InkWell(
                                                                               onTap: () async {
-                                                                                logFirebaseEvent('VIEW_PAGE_PAGE_ListTile_x6djdo58_ON_TAP');
+                                                                                logFirebaseEvent('VIEW_PAGE_ListTile_x6djdo58_ON_TAP');
                                                                                 logFirebaseEvent('ListTile_Navigate-To');
                                                                                 context.pushNamed(
                                                                                   'moreInformation',
@@ -891,7 +891,7 @@ class _ViewPageWidgetState extends State<ViewPageWidget> {
                                                                           return InkWell(
                                                                             onTap:
                                                                                 () async {
-                                                                              logFirebaseEvent('VIEW_PAGE_PAGE_ListTile_dm029gei_ON_TAP');
+                                                                              logFirebaseEvent('VIEW_PAGE_ListTile_dm029gei_ON_TAP');
                                                                               logFirebaseEvent('ListTile_Navigate-To');
                                                                               context.pushNamed(
                                                                                 'moreInformation',
@@ -1086,7 +1086,7 @@ class _ViewPageWidgetState extends State<ViewPageWidget> {
                                                                           return InkWell(
                                                                             onTap:
                                                                                 () async {
-                                                                              logFirebaseEvent('VIEW_PAGE_PAGE_ListTile_szyv0kg8_ON_TAP');
+                                                                              logFirebaseEvent('VIEW_PAGE_ListTile_szyv0kg8_ON_TAP');
                                                                               logFirebaseEvent('ListTile_Navigate-To');
                                                                               context.pushNamed(
                                                                                 'moreInformation',
@@ -1156,7 +1156,7 @@ class _ViewPageWidgetState extends State<ViewPageWidget> {
                                                                                       userRefs: [
                                                                                         listViewPendingMaintenanceRecord.userRec!
                                                                                       ],
-                                                                                      initialPageName: 'viewPage',
+                                                                                      initialPageName: 'view',
                                                                                       parameterData: {},
                                                                                     );
                                                                                     logFirebaseEvent('SlidableActionWidget_Show-Snack-Bar');
@@ -1319,7 +1319,7 @@ class _ViewPageWidgetState extends State<ViewPageWidget> {
                                                                             child:
                                                                                 InkWell(
                                                                               onTap: () async {
-                                                                                logFirebaseEvent('VIEW_PAGE_PAGE_Card_uqmpvujs_ON_TAP');
+                                                                                logFirebaseEvent('VIEW_PAGE_Card_uqmpvujs_ON_TAP');
                                                                                 logFirebaseEvent('Card_Navigate-To');
                                                                                 context.pushNamed(
                                                                                   'moreInformation',
