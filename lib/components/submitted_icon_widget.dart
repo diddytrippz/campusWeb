@@ -15,6 +15,13 @@ class SubmittedIconWidget extends StatefulWidget {
 
 class _SubmittedIconWidgetState extends State<SubmittedIconWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Align(
       alignment: AlignmentDirectional(0, 1),

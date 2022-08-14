@@ -29,6 +29,13 @@ class SideNavWidget extends StatefulWidget {
 
 class _SideNavWidgetState extends State<SideNavWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.max,

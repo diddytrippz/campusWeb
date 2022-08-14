@@ -15,6 +15,13 @@ class LanguageWidget extends StatefulWidget {
 
 class _LanguageWidgetState extends State<LanguageWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 70),

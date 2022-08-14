@@ -14,6 +14,13 @@ class DarkModeWidget extends StatefulWidget {
 
 class _DarkModeWidgetState extends State<DarkModeWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 70),

@@ -54,6 +54,8 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget>
           .where((anim) => anim.trigger == AnimationTrigger.onActionTrigger),
       this,
     );
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
