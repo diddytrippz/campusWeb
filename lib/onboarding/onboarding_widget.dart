@@ -42,13 +42,17 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(30, 30, 30, 30),
-                        child: SvgPicture.asset(
-                          'assets/images/undraw_progressive_app_m-9-ms.svg',
-                          width: MediaQuery.of(context).size.width * 0.4,
-                          height: MediaQuery.of(context).size.height * 0.4,
-                          fit: BoxFit.fill,
+                      Align(
+                        alignment: AlignmentDirectional(0, 0),
+                        child: Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(30, 30, 30, 30),
+                          child: SvgPicture.asset(
+                            'assets/images/undraw_progressive_app_m-9-ms.svg',
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            height: MediaQuery.of(context).size.height * 0.4,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                       Align(
