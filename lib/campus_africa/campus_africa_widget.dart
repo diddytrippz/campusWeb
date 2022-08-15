@@ -101,12 +101,13 @@ class _CampusAfricaWidgetState extends State<CampusAfricaWidget> {
                             ),
                           ),
                           child: Container(
+                            width: MediaQuery.of(context).size.width * 0.8,
                             decoration: BoxDecoration(
                               color: Colors.transparent,
                             ),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(22, 20, 22, 0),
+                                  EdgeInsetsDirectional.fromSTEB(30, 20, 30, 0),
                               child: DefaultTabController(
                                 length: 2,
                                 initialIndex: 0,
@@ -169,98 +170,21 @@ class _CampusAfricaWidgetState extends State<CampusAfricaWidget> {
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.start,
                                                   children: [
-                                                    TextFormField(
-                                                      controller:
-                                                          textFieldEmailController,
-                                                      obscureText: false,
-                                                      decoration:
-                                                          InputDecoration(
-                                                        hintText:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          't9ffbz5k' /* Enter Student Your Email */,
-                                                        ),
-                                                        hintStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Open Sans',
-                                                                  color: Color(
-                                                                      0xFFFCF9F9),
-                                                                ),
-                                                        enabledBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .campusGrey,
-                                                            width: 1,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(4),
-                                                        ),
-                                                        focusedBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .campusGrey,
-                                                            width: 1,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(4),
-                                                        ),
-                                                        contentPadding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(20,
-                                                                    20, 20, 20),
-                                                        prefixIcon: Icon(
-                                                          Icons.alternate_email,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          size: 20,
-                                                        ),
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyText1
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Open Sans',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBtnText,
-                                                              ),
-                                                      keyboardType:
-                                                          TextInputType
-                                                              .emailAddress,
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0, 22, 0, 0),
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0, 0),
                                                       child: TextFormField(
                                                         controller:
-                                                            textFieldPassController,
-                                                        obscureText:
-                                                            !textFieldPassVisibility,
+                                                            textFieldEmailController,
+                                                        obscureText: false,
                                                         decoration:
                                                             InputDecoration(
                                                           hintText:
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                            'n0uctbe1' /* Enter Your Password */,
+                                                            't9ffbz5k' /* Enter Student Your Email */,
                                                           ),
                                                           hintStyle:
                                                               FlutterFlowTheme.of(
@@ -308,32 +232,12 @@ class _CampusAfricaWidgetState extends State<CampusAfricaWidget> {
                                                                       20,
                                                                       20),
                                                           prefixIcon: Icon(
-                                                            FFIcons.klock,
+                                                            Icons
+                                                                .alternate_email,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryBtnText,
                                                             size: 20,
-                                                          ),
-                                                          suffixIcon: InkWell(
-                                                            onTap: () =>
-                                                                setState(
-                                                              () => textFieldPassVisibility =
-                                                                  !textFieldPassVisibility,
-                                                            ),
-                                                            focusNode: FocusNode(
-                                                                skipTraversal:
-                                                                    true),
-                                                            child: Icon(
-                                                              textFieldPassVisibility
-                                                                  ? Icons
-                                                                      .visibility_outlined
-                                                                  : Icons
-                                                                      .visibility_off_outlined,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBtnText,
-                                                              size: 18,
-                                                            ),
                                                           ),
                                                         ),
                                                         style:
@@ -352,69 +256,187 @@ class _CampusAfricaWidgetState extends State<CampusAfricaWidget> {
                                                                 .emailAddress,
                                                       ),
                                                     ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(25, 30,
-                                                                  25, 0),
-                                                      child: FFButtonWidget(
-                                                        onPressed: () async {
-                                                          logFirebaseEvent(
-                                                              'CAMPUS_AFRICA_PAGE_SIGN_IN_BTN_ON_TAP');
-                                                          logFirebaseEvent(
-                                                              'Button_Auth');
-                                                          GoRouter.of(context)
-                                                              .prepareAuthEvent();
-
-                                                          final user =
-                                                              await signInWithEmail(
-                                                            context,
-                                                            textFieldEmailController!
-                                                                .text,
-                                                            textFieldPassController!
-                                                                .text,
-                                                          );
-                                                          if (user == null) {
-                                                            return;
-                                                          }
-
-                                                          context.goNamedAuth(
-                                                              'home', mounted);
-                                                        },
-                                                        text:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          'jwfek3mr' /* Sign In */,
-                                                        ),
-                                                        options:
-                                                            FFButtonOptions(
-                                                          width:
-                                                              double.infinity,
-                                                          height: 55,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryColor,
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .subtitle2
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Open Sans',
-                                                                    color: Colors
-                                                                        .white,
-                                                                  ),
-                                                          elevation: 40,
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Colors
-                                                                .transparent,
-                                                            width: 1,
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0, 0),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(0, 22,
+                                                                    0, 0),
+                                                        child: TextFormField(
+                                                          controller:
+                                                              textFieldPassController,
+                                                          obscureText:
+                                                              !textFieldPassVisibility,
+                                                          decoration:
+                                                              InputDecoration(
+                                                            hintText:
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                              'n0uctbe1' /* Enter Your Password */,
+                                                            ),
+                                                            hintStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyText1
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Open Sans',
+                                                                      color: Color(
+                                                                          0xFFFCF9F9),
+                                                                    ),
+                                                            enabledBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .campusGrey,
+                                                                width: 1,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          4),
+                                                            ),
+                                                            focusedBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .campusGrey,
+                                                                width: 1,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          4),
+                                                            ),
+                                                            contentPadding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        20,
+                                                                        20,
+                                                                        20,
+                                                                        20),
+                                                            prefixIcon: Icon(
+                                                              FFIcons.klock,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBtnText,
+                                                              size: 20,
+                                                            ),
+                                                            suffixIcon: InkWell(
+                                                              onTap: () =>
+                                                                  setState(
+                                                                () => textFieldPassVisibility =
+                                                                    !textFieldPassVisibility,
+                                                              ),
+                                                              focusNode: FocusNode(
+                                                                  skipTraversal:
+                                                                      true),
+                                                              child: Icon(
+                                                                textFieldPassVisibility
+                                                                    ? Icons
+                                                                        .visibility_outlined
+                                                                    : Icons
+                                                                        .visibility_off_outlined,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBtnText,
+                                                                size: 18,
+                                                              ),
+                                                            ),
                                                           ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(12),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Open Sans',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBtnText,
+                                                              ),
+                                                          keyboardType:
+                                                              TextInputType
+                                                                  .emailAddress,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0, 0),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(20,
+                                                                    30, 20, 0),
+                                                        child: FFButtonWidget(
+                                                          onPressed: () async {
+                                                            logFirebaseEvent(
+                                                                'CAMPUS_AFRICA_PAGE_SIGN_IN_BTN_ON_TAP');
+                                                            logFirebaseEvent(
+                                                                'Button_Auth');
+                                                            GoRouter.of(context)
+                                                                .prepareAuthEvent();
+
+                                                            final user =
+                                                                await signInWithEmail(
+                                                              context,
+                                                              textFieldEmailController!
+                                                                  .text,
+                                                              textFieldPassController!
+                                                                  .text,
+                                                            );
+                                                            if (user == null) {
+                                                              return;
+                                                            }
+
+                                                            context.goNamedAuth(
+                                                                'home',
+                                                                mounted);
+                                                          },
+                                                          text: FFLocalizations
+                                                                  .of(context)
+                                                              .getText(
+                                                            'jwfek3mr' /* Sign In */,
+                                                          ),
+                                                          options:
+                                                              FFButtonOptions(
+                                                            width:
+                                                                double.infinity,
+                                                            height: 55,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryColor,
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .subtitle2
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Open Sans',
+                                                                      color: Colors
+                                                                          .white,
+                                                                    ),
+                                                            elevation: 40,
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: Colors
+                                                                  .transparent,
+                                                              width: 1,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
@@ -481,7 +503,7 @@ class _CampusAfricaWidgetState extends State<CampusAfricaWidget> {
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 50, 0, 0),
+                                                    .fromSTEB(10, 50, 10, 0),
                                                 child: TextFormField(
                                                   controller:
                                                       textFieldEmailResetController,

@@ -52,12 +52,12 @@ Locale createLocale(String language) => language.contains('_')
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // onboarding
   {
-    'lk9d1ewu': {
+    '8pztvfov': {
       'en': 'Maintenance Requests',
       'af': '',
       'zu': '',
     },
-    'd326ew3s': {
+    '8o26ihu6': {
       'en': 'Please select your student accomadtion',
       'af': '',
       'zu': '',
